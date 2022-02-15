@@ -2,7 +2,7 @@ import React from 'react'
 import './Resturants.css';
 
 import { useState, useRef } from 'react'
-
+import {Link} from 'react-router-dom'
 
 export const Restaurants = (props) => {
     const [selected, setSelected] = useState("")
@@ -12,18 +12,20 @@ export const Restaurants = (props) => {
         setToggleCard(!toggleCard)
         setSelected(id)
        
+       
+       
     }
     return (
         <div>
 
-            <div className="main"  >{
+            <div className="main d-grid gap-4"  >{
                 props.restaurants.map((hotel) => {
-
+const {id}=hotel
                     return (
                         <>
-
-                            <div className="item " ref={myRef} key={hotel.id}
-                                style={{ backgroundColor: selected === hotel.id 
+                    
+                            <div className="item " ref={myRef} key={id}
+                                style={{ backgroundColor: selected === id 
                                     && toggleCard
                                     ? "red" : "" }}
                                 onClick={() => changeColor(hotel.id)}
@@ -31,17 +33,18 @@ export const Restaurants = (props) => {
 
 
 
-
+                        
 
                                 id:{hotel.id}<br />
                         Name:{hotel.Name}<br />
                         Cousions:{hotel.Cousions}<br />
-                        Rating: {hotel.rating}
-
-
-
+                        Rating: {hotel.Rating}
+                      <br/>
+                        <Link to={`/HotelDetail/${hotel.id}/${hotel.Name}`}>View</Link> 
+                      
                             </div>
-
+                            
+                           
 
                         </>
                     )

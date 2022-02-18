@@ -8,6 +8,7 @@
     display: grids; */
     /* grid-template-columns: auto auto auto; */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    height:auto;
     /* column-gap: 20px;
     height:100vh;
     padding-top: 100px; */
@@ -16,7 +17,7 @@
     width: auto;
   }
 .item{
-    background-color: green; 
+    /* background-color: green;  */
     /* width:25%; */
     border:2px solid pink;
     border-radius: 20px;
